@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Puzzle</title>
+</head>
+<body>
+<style type="text/css">
+    img { height:20%; width:100%;
+    }
+</style>
+
+<div style ="height: 500px; width: 500px">
+    <img  class ="1" id="img1" onclick="click1()" src="Image\cat_part1.jpg">
+    <img  class ="1" id="img2" onclick="click2()" src="Image\cat_part2.jpg">
+    <img  class ="1" id="img3" onclick="click3()" src="Image\cat_part3.jpg">
+    <img  class ="1" id="img4" onclick="click4()" src="Image\cat_part4.jpg">
+    <img  class ="1" id="img5" onclick="click5()" src="Image\cat_part5.jpg">
+</div>
+<p style="font-size: 20px" id="ok"></p>
+</body>
+</html>
+<script>'s'
+    /*var Images = {
+        imgsDB:
+            [
+                [   "Image\\cat_part1.jpg",
+                    "Image\\cat_part2.jpg",
+                    "Image\\cat_part3.jpg",
+                    "Image\cat_part4.jpg",
+                    "Image\cat_part5.jpg"],
+                [   "Image\monkey_part1.jpg",
+                    "Image\monkey_part2.jpg",
+                    "Image\monkey_part3.jpg",
+                    "Image\monkey_part4.jpg",
+                    "Image\monkey_part5.jpg"],
+                [   "Image\panda_part1.jpg",
+                    "Image\panda_part2.jpg",
+                    "Image\panda_part3.jpg",
+                    "Image\panda_part4.jpg",
+                    "Image\panda_part5.jpg"],
+            ],
+
+    }*/
+
+    function click1() {
+        var getSrc = document.getElementById('img1').getAttribute("src");
+        if (getSrc === "Image\\cat_part1.jpg") {
+            document.getElementById("img1").src = "Image\\monkey_part1.jpg";
+        } else if (getSrc === "Image\\monkey_part1.jpg") {
+            document.getElementById("img1").src = "Image\\panda_part1.jpg";
+        } else {document.getElementById("img1").src = "Image\\cat_part1.jpg";}
+
+    }
+
+    function click2() {
+        var getSrc = document.getElementById("img2").getAttribute("src");
+        if (getSrc === "Image\\cat_part2.jpg") {
+            document.getElementById("img2").src = "Image\\monkey_part2.jpg";
+        } else if (getSrc === "Image\\monkey_part1.jpg") {
+            document.getElementById("img2").src = "Image\\panda_part2.jpg";
+        } else {document.getElementById("img2").src = "Image\\cat_part2.jpg";}
+    }
+
+    function click3() {
+        var getSrc = document.getElementById("img3").getAttribute("src");
+        if (getSrc === "Image\\cat_part3.jpg") {
+            document.getElementById("img3").src = "Image\\monkey_part3.jpg";
+        } else if (getSrc === "Image\\monkey_part3.jpg") {
+            document.getElementById("img3").src = "Image\\panda_part3.jpg";
+        } else {document.getElementById("img3").src = "Image\\cat_part3.jpg";}
+        check()
+    }
+
+    function click4() {
+        var getSrc = document.getElementById("img4").getAttribute("src");
+        if (getSrc === "Image\\cat_part4.jpg") {
+            document.getElementById("img4").src = "Image\\monkey_part4.jpg";
+        } else if (getSrc === "Image\\monkey_part4.jpg") {
+            document.getElementById("img4").src = "Image\\panda_part4.jpg";
+        } else {document.getElementById("img4").src = "Image\\cat_part4.jpg";}
+        check()
+    }
+
+    function click5() {
+        var getSrc = document.getElementById("img5").getAttribute("src");
+        if (getSrc === "Image\\cat_part5.jpg") {
+            document.getElementById("img5").src = "Image\\monkey_part5.jpg";
+        } else if (getSrc === "Image\\monkey_part5.jpg") {
+            document.getElementById("img5").src = "Image\\panda_part5.jpg";
+        } else {document.getElementById("img5").src = "Image\\cat_part5.jpg";}
+        check()
+    }
+
+function check() {
+    if ((document.getElementById("img1").getAttribute("src") === "Image\\monkey_part1.jpg") &&
+        (document.getElementById("img2").getAttribute("src") === "Image\\monkey_part2.jpg") &&
+        (document.getElementById("img3").getAttribute("src") === "Image\\monkey_part3.jpg") &&
+        (document.getElementById("img4").getAttribute("src") === "Image\\monkey_part4.jpg") &&
+        (document.getElementById("img5").getAttribute("src") === "Image\\monkey_part5.jpg")) {
+        document.getElementById("ok").innerHTML="that right";
+    } else if ((document.getElementById("img1").getAttribute("src") === "Image\\cat_part1.jpg") &&
+        (document.getElementById("img2").getAttribute("src") === "Image\\cat_part2.jpg") &&
+        (document.getElementById("img3").getAttribute("src") === "Image\\cat_part3.jpg") &&
+        (document.getElementById("img4").getAttribute("src") === "Image\\cat_part4.jpg") &&
+        (document.getElementById("img5").getAttribute("src") === "Image\\cat_part5.jpg")) {
+        document.getElementById("ok").innerHTML="that right";
+    } else if ((document.getElementById("img1").getAttribute("src") === "Image\\panda_part1.jpg") &&
+        (document.getElementById("img2").getAttribute("src") === "Image\\panda_part2.jpg") &&
+        (document.getElementById("img3").getAttribute("src") === "Image\\panda_part3.jpg") &&
+        (document.getElementById("img4").getAttribute("src") === "Image\\panda_part4.jpg") &&
+        (document.getElementById("img5").getAttribute("src") === "Image\\panda_part5.jpg")) {
+        document.getElementById("ok").innerHTML="that right";
+    }
+}
+
+</script>

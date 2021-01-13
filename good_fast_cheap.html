@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>good fast cheap</title>
+    <link rel="stylesheet" href="ButtonIOS.css">
+</head>
+<body>
+
+<div class="switch__container">
+    <table>
+        <tr>
+            <td>Good</td>
+            <td><input id="good" class="switch switch--shadow good" type="checkbox" onchange="changed(this.id)">
+                <label for="good"></label><br></td>
+        </tr>
+        <tr>
+            <td>Fast</td>
+            <td><input id="fast" class="switch switch--shadow fast" type="checkbox" onchange="changed(this.id)">
+                <label for="fast"></label><br></td>
+        </tr>
+        <tr>
+            <td>Cheap</td>
+            <td><input id="cheap" class="switch switch--shadow cheap" type="checkbox" onchange="changed(this.id)">
+                <label for="cheap"></label><br></td>
+        </tr>
+    </table>
+
+</div>
+
+</body>
+</html>
+<script>
+    let good = document.getElementById('good');
+    let fast = document.getElementById('fast');
+    let cheap = document.getElementById('cheap');
+
+
+    function changed(id){
+
+        switch (id){
+            case "good":
+                if( good.checked && cheap.checked) {
+                    fast.checked = false;
+                } break;
+            case "fast":
+                if(fast.checked && good.checked) {
+                    cheap.checked = false;
+                } break;
+            case "cheap":
+                if(cheap.checked && fast.checked) {
+                    good.checked = false;
+                } break;
+        }
+
+
+        /*if(id==='good' && good.checked && cheap.checked){
+            fast.checked = false;
+        }
+
+        if(id==='fast' && fast.checked && good.checked){
+            cheap.checked = false;
+        }
+
+        if(id==='cheap' && cheap.checked && fast.checked){
+            good.checked = false;
+        } */
+
+    }
+</script>
